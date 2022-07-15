@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Animal {
+        _age = 10;
+        constructor(name) {
+          this.name = name;
+        }
+
+        get age() {
+          return this._age;
+        }
+
+        set age(val) {
+          throw new Error("can set");
+        }
+
+        static num = 2;
+
+        $belong = "xiaohong";
+
+        sayNum() {
+          console.log(Animal.num);
+          console.log(this.num); // undefined
+        }
+      }
+
+      const cat = new Animal("cat");
+      cat.sayNum();
+      console.log(cat.age);
+    </script>
+  </body>
+</html>
